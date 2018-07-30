@@ -2,14 +2,15 @@
     border: 1px solid gray;
 }
 .category_list{
-    width: 50%;
+    /* width: 50%; */
     text-align: left;
     padding: 5px;
     height: 35px;
+    cursor: pointer;
 }
 .task{
     height: 20px;
-    border-radius: 30px;
+    border-radius: 50%;
     width: 20px !important;
     background-color: skyblue;
     text-align: center;
@@ -19,6 +20,9 @@
     border-bottom: 1px solid gray;
 }
 .add {
-    width: 80%;
-    border-bottom: 1px solid gray !important;
+    border: none;
+}
+.circle {
+    
+    border-radius: 50%;
 }

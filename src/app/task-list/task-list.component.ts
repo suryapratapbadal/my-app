@@ -12,26 +12,56 @@ export class TaskListComponent implements OnInit {
   categoryList = [
     {
       "type": "Today",
-      "noOfToDos": 3
+      "noOfToDos": 3,
+      "todo": {
+      
+      }
     },
     {
       "type": "Tomorrow",
-      "noOfToDos": 1
+      "noOfToDos": 1,
+      "todo": {
+      
+      }
     },
     {
       "type": "Work",
-      "noOfToDos": 0
+      "noOfToDos": 0,
+      "todo": {
+      
+      }
     },
     {
       "type": "Holiday",
-      "noOfToDos": 0
+      "noOfToDos": 0,
+      "todo": {
+      
+      }
     },
     {
       "type": "Shopping List",
-      "noOfToDos": 0
+      "noOfToDos": 0,
+      "todo": {
+      
+      }
     },
   ];
 
+  newCategory = '';
+
+  onKey(event: any) { // without type info
+    console.log('CHANGE...',event.target.value)
+    this.newCategory = event.target.value;
+    console.log('CHANGE 2...',this.newCategory)
+    
+  }
+  addCategory() {
+    console.log('....CLICKED', this.newCategory);
+    this.categoryList.push({'type': this.newCategory, 'noOfToDos': 0, 'todo': {}});
+  }
+  openToDo(event, todo) {
+    console.log('open TODO')
+  }
 
   ngOnInit() {
   }

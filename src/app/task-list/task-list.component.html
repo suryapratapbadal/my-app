@@ -1,10 +1,13 @@
 <div class="border container">
-  <div *ngFor="let category of categoryList" class="row category_list borderBottom">
+  <div *ngFor="let category of categoryList" class="row category_list borderBottom" (click)="openToDo($event,category.todo)">
     <p class="col-lg-9 col-md-9 col-sm-9">{{category.type}}</p>
     <p class="col-lg-3 col-md-3 col-sm-3 task">{{category.noOfToDos}}</p>
   </div>
   <div class="row category_list borderBottom">
-      <input type="text" name="category_name" placeholder="Add new Category"/>
-      <p class="col-lg-3 col-md-3 col-sm-3 task">+</p>
+    <input type="text" name="category_name" placeholder="Add new Category" class="form-control form-control-sm col-lg-9 col-md-9 col-sm-9 add"
+      (keyup)="onKey($event)" />
+
+    <button type="button" [disabled]="newCategory.length == 0" class="col-lg-3 col-md-3 col-sm-3 btn btn-primary circle" (click)="addCategory($event)">+</button>
+
   </div>
 </div>
